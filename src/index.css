@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-midnight: #0c071e;
+    --bg-card: #130b2e;
+    --border-glow: rgba(192, 38, 211, 0.25);
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0c071e;
+    color: #f3e8ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(217, 70, 239, 0.35);
+    color: #ffffff;
+  }
+
+  /* Custom Sleek Scrollbar in Amethyst/Fuchsia */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0c071e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.3);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(217, 70, 239, 0.6);
+  }
+}
+
+/* Atmospheric Glow & Theme Utilities */
+.rakshika-ambient-bg {
+  background-color: #0c071e;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(192, 38, 211, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 90% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 10% 40%, rgba(244, 63, 94, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 45%);
+}
+
+.rakshika-card {
+  background-color: rgba(19, 11, 46, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(12, 7, 30, 0.8), 0 0 20px -5px rgba(192, 38, 211, 0.08);
+}
+
+.rakshika-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rakshika-card-hover:hover {
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 12px 35px -8px rgba(12, 7, 30, 0.9), 0 0 25px -3px rgba(217, 70, 239, 0.18);
+  transform: translateY(-1px);
+}
+
+.rakshika-inner-panel {
+  background-color: rgba(12, 7, 32, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.rakshika-gradient-btn {
+  background: linear-gradient(135deg, #d946ef 0%, #ec4899 50%, #f43f5e 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px -3px rgba(217, 70, 239, 0.4), 0 0 10px -2px rgba(244, 63, 94, 0.3);
+  transition: all 0.2s ease;
+}
+
+.rakshika-gradient-btn:hover {
+  background: linear-gradient(135deg, #e879f9 0%, #f472b6 50%, #fb7185 100%);
+  box-shadow: 0 6px 20px -2px rgba(217, 70, 239, 0.55), 0 0 15px -1px rgba(244, 63, 94, 0.45);
+  transform: translateY(-1px);
+}
+
+.rakshika-gradient-text {
+  background: linear-gradient(135deg, #f472b6 0%, #e879f9 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

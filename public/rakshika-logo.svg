@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background subtle radial glow -->
+    <radialGradient id="bg-glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#1e1035" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0b0614" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shield & Orbit Gradients -->
+    <linearGradient id="shield-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+
+    <linearGradient id="shield-fill" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#2a124d"/>
+      <stop offset="100%" stop-color="#140924"/>
+    </linearGradient>
+
+    <!-- Hair Layer Gradients -->
+    <linearGradient id="hair-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7e22ce"/>
+      <stop offset="50%" stop-color="#c026d3"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+
+    <linearGradient id="hair-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+
+    <linearGradient id="hair-deep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+
+    <!-- Cradling Hands Gradient -->
+    <linearGradient id="hands-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="50%" stop-color="#d946ef"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+
+    <!-- Node Badge Gradients -->
+    <linearGradient id="badge-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Background Plate -->
+  <rect width="100%" height="100%" fill="#0a0612" rx="24"/>
+  <circle cx="250" cy="180" r="220" fill="url(#bg-glow)"/>
+
+  <!-- ======================================================== -->
+  <!-- 1. ORBITAL CONNECTOR RINGS & ARCS                        -->
+  <!-- ======================================================== -->
+  <g opacity="0.65">
+    <path d="M 120,130 A 165,165 0 0,1 380,130" fill="none" stroke="url(#shield-stroke)" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 0"/>
+    <path d="M 95,210 A 175,175 0 0,0 170,310" fill="none" stroke="url(#shield-stroke)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 405,210 A 175,175 0 0,1 330,310" fill="none" stroke="url(#shield-stroke)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Concentric inner orbit line -->
+    <circle cx="250" cy="190" r="145" fill="none" stroke="#7e22ce" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 6"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 2. SHIELD BACKGROUND & GLOWING BORDER                    -->
+  <!-- ======================================================== -->
+  <g filter="url(#soft-glow)">
+    <!-- Outer Shield Glow -->
+    <path d="M 250,70 
+             L 345,115 
+             L 345,225 
+             Q 345,305 250,345 
+             Q 155,305 155,225 
+             L 155,115 Z" 
+          fill="url(#shield-fill)" 
+          stroke="url(#shield-stroke)" 
+          stroke-width="5" 
+          stroke-linejoin="round"/>
+
+    <!-- Inner Shield Inset Border -->
+    <path d="M 250,85 
+             L 332,125 
+             L 332,220 
+             Q 332,292 250,328 
+             Q 168,292 168,220 
+             L 168,125 Z" 
+          fill="none" 
+          stroke="#9333ea" 
+          stroke-width="1.5" 
+          stroke-opacity="0.5"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 3. SILHOUETTE OF WOMAN (PROFILE & HAIR)                  -->
+  <!-- ======================================================== -->
+  <g id="woman-avatar">
+    <!-- Deep Hair Base / Shadow -->
+    <path d="M 220,120
+             C 180,135 160,180 165,225
+             C 170,265 195,295 240,315
+             C 215,295 205,265 210,235
+             C 215,200 240,165 270,140
+             C 255,125 235,118 220,120 Z" 
+          fill="url(#hair-deep)"/>
+
+    <!-- Flowing Hair Waves - Layer 1 (Purple/Magenta) -->
+    <path d="M 245,115
+             C 210,120 180,150 175,190
+             C 170,230 190,265 220,295
+             C 200,265 195,230 205,195
+             C 215,160 245,135 275,125
+             C 265,118 255,115 245,115 Z" 
+          fill="url(#hair-main)"/>
+
+    <!-- Flowing Hair Waves - Layer 2 (Vivid Magenta/Pink) -->
+    <path d="M 260,120
+             C 230,130 205,165 200,205
+             C 195,245 220,280 250,305
+             C 230,280 220,245 230,210
+             C 240,175 265,145 285,130
+             C 275,123 268,120 260,120 Z" 
+          fill="url(#hair-light)"/>
+
+    <!-- Hair Swoop Accent -->
+    <path d="M 275,135
+             C 255,150 235,180 232,215
+             C 230,245 245,270 265,290
+             C 250,268 245,242 250,218
+             C 255,190 272,165 292,148
+             Z" 
+          fill="#f472b6" opacity="0.85"/>
+
+    <!-- Female Profile Silhouette (Pure Elegant Profile Facing Right) -->
+    <!-- Forehead, Nose, Lips, Chin, Neck, Shoulder -->
+    <path d="M 265,128
+             C 272,130 278,135 282,142
+             C 285,148 286,155 283,160
+             C 281,163 283,165 287,168
+             C 292,172 296,176 302,181
+             C 297,184 293,185 290,188
+             C 289,190 292,192 296,195
+             C 298,197 296,201 292,203
+             C 288,205 289,208 293,212
+             C 295,215 293,219 288,222
+             C 282,225 277,227 274,233
+             C 271,240 271,250 273,260
+             C 275,270 282,282 295,295
+             C 275,285 265,268 262,250
+             C 258,235 260,222 263,210
+             C 258,205 255,195 255,185
+             C 255,165 260,145 265,128 Z" 
+          fill="#ffffff" 
+          filter="url(#soft-glow)"/>
+
+    <!-- Subtle Facial Tone & Eyelash/Eyebrow Accent -->
+    <path d="M 284,166 Q 289,165 292,170" stroke="#c084fc" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 280,152 Q 286,149 292,154" stroke="#7e22ce" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 4. CRADLING SUPPORTING HANDS                             -->
+  <!-- ======================================================== -->
+  <g id="supporting-hands" filter="url(#soft-glow)">
+    <!-- Left Hand Cradling upward -->
+    <path d="M 140,230 
+             C 142,275 160,310 195,335 
+             C 215,348 235,355 245,358 
+             C 225,350 200,332 180,310 
+             C 158,285 148,255 145,230 Z" 
+          fill="url(#hands-grad)"/>
+    <!-- Left Hand Inner Layer -->
+    <path d="M 165,255 
+             C 168,285 185,315 215,335 
+             C 230,344 242,348 248,350 
+             C 232,344 212,330 195,312 
+             C 178,290 170,268 168,255 Z" 
+          fill="#f472b6" opacity="0.9"/>
+
+    <!-- Right Hand Cradling upward -->
+    <path d="M 360,230 
+             C 358,275 340,310 305,335 
+             C 285,348 265,355 255,358 
+             C 275,350 300,332 320,310 
+             C 342,285 352,255 355,230 Z" 
+          fill="url(#hands-grad)"/>
+    <!-- Right Hand Inner Layer -->
+    <path d="M 335,255 
+             C 332,285 315,315 285,335 
+             C 270,344 258,348 252,350 
+             C 268,344 288,330 305,312 
+             C 322,290 330,268 332,255 Z" 
+          fill="#f472b6" opacity="0.9"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 5. FIVE ORBITING FEATURE BADGES (CIRCUITS)               -->
+  <!-- ======================================================== -->
+
+  <!-- Top Badge: Location GPS Pin + Radio Waves -->
+  <g transform="translate(250, 60)">
+    <!-- Radio Signal Arcs above Pin -->
+    <path d="M -16,-22 A 20,20 0 0,1 16,-22" fill="none" stroke="#e879f9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -9,-15 A 11,11 0 0,1 9,-15" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Center Pin -->
+    <path d="M 0,-6 C -8,-6 -14,0 -14,8 C -14,16 0,28 0,28 C 0,28 14,16 14,8 C 14,0 8,-6 0,-6 Z" fill="url(#badge-glow)" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="0" cy="8" r="4.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Top-Left Badge: SOS Call Button -->
+  <g transform="translate(145, 120)">
+    <circle cx="0" cy="0" r="28" fill="#140924" stroke="url(#badge-glow)" stroke-width="3" filter="url(#soft-glow)"/>
+    <!-- SOS Text -->
+    <text x="0" y="-7" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="900" text-anchor="middle" letter-spacing="1">SOS</text>
+    <!-- Phone Receiver Icon -->
+    <path d="M -8,3 C -8,11 0,16 8,16 C 10,16 12,14 11,11 L 9.5,8 C 9,7 7.5,7 6.5,8 L 5,9 C 3,8 2,7 1,5 L 2,3.5 C 3,2.5 3,1 2,0.5 L -1,-1 C -3,-2 -5,-1 -6,0 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Bottom-Left Badge: Shield Checkmark -->
+  <g transform="translate(110, 210)">
+    <circle cx="0" cy="0" r="28" fill="#140924" stroke="url(#badge-glow)" stroke-width="3" filter="url(#soft-glow)"/>
+    <!-- Mini Shield with Check -->
+    <path d="M 0,-12 L 12,-7 L 12,2 Q 12,10 0,14 Q -12,10 -12,2 L -12,-7 Z" fill="url(#badge-glow)" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -5,1 L -1,5 L 6,-3" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Top-Right Badge: CCTV Surveillance Camera -->
+  <g transform="translate(355, 120)">
+    <circle cx="0" cy="0" r="28" fill="#140924" stroke="url(#badge-glow)" stroke-width="3" filter="url(#soft-glow)"/>
+    <!-- CCTV Camera Icon -->
+    <path d="M -12,-6 L 8,-12 L 14,-3 L -6,3 Z" fill="#ffffff"/>
+    <path d="M 8,-12 L 14,-3 L 14,2 L 8,0 Z" fill="#c084fc"/>
+    <rect x="-10" y="3" width="6" height="7" fill="#ffffff"/>
+    <path d="M -10,10 L 0,10" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="3" cy="-3" r="2" fill="#ec4899"/>
+  </g>
+
+  <!-- Bottom-Right Badge: Guardian Community / Users -->
+  <g transform="translate(390, 210)">
+    <circle cx="0" cy="0" r="28" fill="#140924" stroke="url(#badge-glow)" stroke-width="3" filter="url(#soft-glow)"/>
+    <!-- Users Icon -->
+    <!-- Primary User -->
+    <circle cx="-3" cy="-4" r="5" fill="#ffffff"/>
+    <path d="M -11,10 C -11,5 -5,4 -3,4 C -1,4 5,5 5,10 Z" fill="#ffffff"/>
+    <!-- Secondary User (Behind) -->
+    <circle cx="7" cy="-6" r="4" fill="#c084fc"/>
+    <path d="M 5,8 C 6,5 9,4 11,4 C 13,4 16,5 16,8 Z" fill="#c084fc"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 6. BRAND TYPOGRAPHY: RAKSHIKA AI                         -->
+  <!-- ======================================================== -->
+  <g id="brand-text" transform="translate(250, 415)" text-anchor="middle">
+    <!-- Main Title: RAKSHIKA AI -->
+    <text y="0" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="44" font-weight="900" letter-spacing="4" fill="#ffffff">
+      RAKSHIK<tspan fill="#ec4899">A</tspan> <tspan fill="#f43f5e">AI</tspan>
+    </text>
+
+    <!-- Sparkle on AI -->
+    <path d="M 188,-28 Q 188,-18 196,-18 Q 188,-18 188,-8 Q 188,-18 180,-18 Q 188,-18 188,-28 Z" fill="#f472b6" filter="url(#soft-glow)"/>
+
+    <!-- Tagline: SAFETY · SUPPORT · ALWAYS -->
+    <g transform="translate(0, 25)">
+      <!-- Left line -->
+      <line x1="-180" y1="-4" x2="-130" y2="-4" stroke="url(#shield-stroke)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Text -->
+      <text y="0" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#e2e8f0">
+        SAFETY <tspan fill="#ec4899">·</tspan> SUPPORT <tspan fill="#ec4899">·</tspan> ALWAYS
+      </text>
+      <!-- Right line -->
+      <line x1="130" y1="-4" x2="180" y2="-4" stroke="url(#shield-stroke)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "Rakshika AI",
+  "description": "A safety prototype featuring live audio monitoring, location sharing, ETA tracking, and emergency alerts.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
